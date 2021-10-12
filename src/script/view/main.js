@@ -1,16 +1,16 @@
-const main = () => {
+const main = function () {
     const searchElement = document.querySelector("#searchElement");
     const buttonSearchElement = document.querySelector("#searchButtonElement");
     const clubListElement = document.querySelector("#clubList");
 
-    const onButtonSearchClicked = () => {
+    const onButtonSearchClicked = function () {
         const dataSource = new DataSource(renderResult, fallbackResult);
         dataSource.searchClub(searchElement.value);
     };
 
-    const renderResult = results => {
+    const renderResult = function (results) {
         clubListElement.innerHTML = "";
-        results.forEach((club) => {
+        results.forEach(function (club) {
             const {name, stadium, fanArt, description} = club;
 
             const clubElement = document.createElement("div");
@@ -25,7 +25,7 @@ const main = () => {
         })
     };
 
-    const fallbackResult = message => {
+    const fallbackResult = function (message) {
         clubListElement.innerHTML = "";
         clubListElement.innerHTML += `<h2 class="placeholder"> ${message} </h2>`
     };
