@@ -1,3 +1,4 @@
+import clubs from "./clubs.js";
 class DataSource {
     constructor(onSuccess, onFailed){
         this.onSuccess = onSuccess;
@@ -14,3 +15,5 @@ class DataSource {
         }
     }
 }
+
+export default DataSource;
