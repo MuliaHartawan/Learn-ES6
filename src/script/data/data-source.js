@@ -5,8 +5,10 @@ class DataSource {
             if (filteredClubs.length) {
                 resolve(filteredClubs);
             } else {
-                rejectx(`${keyword} is not found`);
+                reject(`${keyword} is not found`);
             }
         });
     }
 }
+
+export default DataSource;
